@@ -27,6 +27,14 @@ class OrganizationList(ListView):
     template_name = 'org_list.html'
     paginate_by = 5
 
+from studentorg.forms import OrganizationForm 
+ 
+class OrganizationCreateView(CreateView): 
+    model = Organization 
+    form_class = OrganizationForm 
+    template_name = 'org_form.html' 
+    success_url = reverse_lazy('organization-list') 
+
 class OrgMemberListView(ListView):
     model = OrgMember
     context_object_name = 'members'
