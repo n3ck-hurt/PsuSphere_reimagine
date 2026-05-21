@@ -6,9 +6,23 @@ class Command(BaseCommand):
     help = 'Create initial data for the application'
 
     def handle(self, *args, **kwargs):
+        self.create_colleges(8)
+        self.create_programs(10)
         self.create_organization(10)
         self.create_students(50)
         self.create_membership(10)
+
+    def create_colleges(self, count):
+        for i in range(1, count + 1):
+            College.objects.get_or_create(college_name=f"College {i}")
+        self.stdout.write(self.style.SUCCESS(f'{count} Colleges created/verified.'))
+
+    def create_programs(self, count):
+        colleges = College.objects.all()
+        for i in range(1, count + 1):
+            college = colleges[i % colleges.count()]
+            Program.objects.get_or_create(prog_name=f"Program {i}", college=college)
+        self.stdout.write(self.style.SUCCESS(f'{count} Programs created/verified.'))
 
     def create_organization(self, count):
         fake = Faker()

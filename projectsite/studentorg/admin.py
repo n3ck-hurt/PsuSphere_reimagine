@@ -35,7 +35,7 @@ class OrgMemberAdmin(admin.ModelAdmin):
     search_fields = ("student__lastname", "student__firstname")
 
     def get_member_program(self, obj):
-        try:
-            return Student.objects.get(id=obj.student_id).program
-        except Student.DoesNotExist:
-            return None
+        return obj.student.program if obj.student else None
+    
+    get_member_program.short_description = 'Program'
+
