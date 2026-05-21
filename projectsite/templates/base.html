@@ -69,44 +69,44 @@
 						</a>
 					</div>
 				</div>
-				<ul class="nav">
-					<li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
-						<a href="{% url 'home' %}">
-							<i class="la la-home"></i>
-							<p>Dashboard</p>
-						</a>
-					</li>
-					<li class="nav-item {% if request.resolver_match.url_name == 'organization-list' %}active{% endif %}">
-						<a href="{% url 'organization-list' %}">
-							<i class="la la-sitemap"></i>
-							<p>Organizations</p>
-						</a>
-					</li>
-					<li class="nav-item {% if request.resolver_match.url_name == 'orgmember-list' %}active{% endif %}">
-						<a href="{% url 'orgmember-list' %}">
-							<i class="la la-users"></i>
-							<p>Organization Members</p>
-						</a>
-					</li>
-					<li class="nav-item {% if request.resolver_match.url_name == 'student-list' %}active{% endif %}">
-						<a href="{% url 'student-list' %}">
-							<i class="la la-graduation-cap"></i>
-							<p>Students</p>
-						</a>
-					</li>
-					<li class="nav-item {% if request.resolver_match.url_name == 'college-list' %}active{% endif %}">
-						<a href="{% url 'college-list' %}">
-							<i class="la la-building"></i>
-							<p>Colleges</p>
-						</a>
-					</li>
-					<li class="nav-item {% if request.resolver_match.url_name == 'program-list' %}active{% endif %}">
-						<a href="{% url 'program-list' %}">
-							<i class="la la-book"></i>
-							<p>Programs</p>
-						</a>
-					</li>
-				</ul>
+					<ul class="nav">
+						<li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+							<a href="{% url 'home' %}">
+								<i class="la la-home"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+						<li class="nav-item {% if request.resolver_match.url_name == 'organization-list' %}active{% endif %}">
+							<a href="{% url 'organization-list' %}">
+								<i class="la la-sitemap"></i>
+								<p>Organization</p>
+							</a>
+						</li>
+						<li class="nav-item {% if request.resolver_match.url_name == 'orgmember-list' %}active{% endif %}">
+							<a href="{% url 'orgmember-list' %}">
+								<i class="la la-users"></i>
+								<p>Org. Members</p>
+							</a>
+						</li>
+						<li class="nav-item {% if request.resolver_match.url_name == 'student-list' %}active{% endif %}">
+							<a href="{% url 'student-list' %}">
+								<i class="la la-graduation-cap"></i>
+								<p>Student</p>
+							</a>
+						</li>
+						<li class="nav-item {% if request.resolver_match.url_name == 'college-list' %}active{% endif %}">
+							<a href="{% url 'college-list' %}">
+								<i class="la la-building"></i>
+								<p>College</p>
+							</a>
+						</li>
+						<li class="nav-item {% if request.resolver_match.url_name == 'program-list' %}active{% endif %}">
+							<a href="{% url 'program-list' %}">
+								<i class="la la-book"></i>
+								<p>Programs</p>
+							</a>
+						</li>
+					</ul>
 
 			</div>
 		</div>
