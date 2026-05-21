@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import HomePageView, OrganizationListView, OrgMemberListView, StudentListView, CollegeListView, ProgramListView
+from .views import HomePageView, OrganizationList, OrgMemberListView, StudentListView, CollegeListView, ProgramListView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
-    path('organizations/', OrganizationListView.as_view(), name='organization-list'),
+    path('organization_list', OrganizationList.as_view(), name='organization-list'),
     path('members/', OrgMemberListView.as_view(), name='orgmember-list'),
     path('students/', StudentListView.as_view(), name='student-list'),
     path('colleges/', CollegeListView.as_view(), name='college-list'),

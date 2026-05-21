@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from studentorg.models import Organization, Student, Program, College, OrgMember
 from django.utils import timezone
+from django.urls import reverse_lazy
 
 class HomePageView(ListView):
     model = Organization
@@ -19,10 +21,10 @@ class HomePageView(ListView):
         context['joined_this_year'] = OrgMember.objects.filter(date_joined__year=current_year).count()
         return context
 
-class OrganizationListView(ListView):
+class OrganizationList(ListView):
     model = Organization
-    context_object_name = 'organizations'
-    template_name = 'organization_list.html'
+    context_object_name = 'organization'
+    template_name = 'org_list.html'
     paginate_by = 5
 
 class OrgMemberListView(ListView):
