@@ -12,6 +12,19 @@
                         <div class="card-title">Student Directory</div>
                         <p class="card-category">Complete list of students enrolled in various programs.</p>
                     </div>
+                    <br />
+                    <div class="col-md-12 row mb-3">
+                        <div class="col-md-6">
+                            <form class="navbar-left navbar-form nav-search mr-md-3" action="{% url 'student-list' %}">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search students..." class="form-control" name="q" value="{{ request.GET.q }}" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="la la-search search-icon"></i></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <table class="table table-head-bg-success mt-4">
                             <thead>

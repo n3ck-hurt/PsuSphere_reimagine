@@ -12,6 +12,19 @@
                         <div class="card-title">University Colleges</div>
                         <p class="card-category">All academic colleges within the university.</p>
                     </div>
+                    <br />
+                    <div class="col-md-12 row mb-3">
+                        <div class="col-md-6">
+                            <form class="navbar-left navbar-form nav-search mr-md-3" action="{% url 'college-list' %}">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search colleges..." class="form-control" name="q" value="{{ request.GET.q }}" />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="la la-search search-icon"></i></span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <div class="card-body">
                         <table class="table table-head-bg-warning mt-4">
                             <thead>

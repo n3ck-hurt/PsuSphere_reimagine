@@ -15,9 +15,9 @@
            <br /> 
            <div class="col-md-12 row mb-3"> 
              <div class="col-md-6"> 
-               <form class="navbar-left navbar-form nav-search mr-md-3" action=""> 
+               <form class="navbar-left navbar-form nav-search mr-md-3" action="{% url 'organization-list' %}"> 
                  <div class="input-group"> 
-                   <input type="text" placeholder="Search records..." class="form-control" /> 
+                   <input type="text" placeholder="Search records..." class="form-control" name="q" value="{{ request.GET.q }}" /> 
                    <div class="input-group-append"> 
                      <span class="input-group-text"><i class="la la-search search-icon"></i></span> 
                    </div> 
@@ -47,9 +47,9 @@
                    <td>{{ object.college }}</td> 
                    <td>{{ object.description }}</td> 
                    <td> 
-                      <a href="organization_list/{{ object.id }}" class="btn btn-sm btn-link text-primary">Edit</a> 
-                      <a href="organization_list/{{ object.id }}/delete" class="btn btn-sm btn-link text-danger">Delete</a> 
-                    </td> 
+                       <a href="{% url 'organization-update' object.id %}" class="btn btn-sm btn-link text-primary">Edit</a> 
+                       <a href="{% url 'organization-delete' object.id %}" class="btn btn-sm btn-link text-danger">Delete</a> 
+                     </td> 
                  </tr> 
                  {% empty %} 
                  <tr> 
