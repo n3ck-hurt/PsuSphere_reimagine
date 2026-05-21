@@ -41,6 +41,11 @@ class OrganizationUpdateView(UpdateView):
     template_name = 'org_form.html' 
     success_url = reverse_lazy('organization-list') 
 
+class OrganizationDeleteView(DeleteView): 
+    model = Organization 
+    template_name = 'org_del.html' 
+    success_url = reverse_lazy('organization-list') 
+
 class OrgMemberListView(ListView):
     model = OrgMember
     context_object_name = 'members'

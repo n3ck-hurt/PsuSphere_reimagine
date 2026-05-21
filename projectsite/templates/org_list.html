@@ -47,8 +47,9 @@
                    <td>{{ object.college }}</td> 
                    <td>{{ object.description }}</td> 
                    <td> 
-                     <a href="organization_list/{{ object.id }}" class="btn btn-sm btn-link text-primary">Edit</a> 
-                   </td> 
+                      <a href="organization_list/{{ object.id }}" class="btn btn-sm btn-link text-primary">Edit</a> 
+                      <a href="organization_list/{{ object.id }}/delete" class="btn btn-sm btn-link text-danger">Delete</a> 
+                    </td> 
                  </tr> 
                  {% empty %} 
                  <tr> 
