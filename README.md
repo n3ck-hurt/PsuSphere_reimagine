@@ -1,25 +1,36 @@
 # PSUSphere
 
-## Project Description
-PSUSphere is a Django-based web application designed to manage student organizations, colleges, and programs within a university setting. It provides a robust administrative interface for tracking students, their affiliations with various organizations, and the academic structure of the institution.
+## Project Overview
+PSUSphere is a modern, responsive web application built with Django for managing university student organizations, academic programs, and student directory records.
 
-## Key Functionality
-- **College Management**: Track different colleges within the university.
-- **Program Management**: Manage academic programs and their association with colleges.
-- **Organization Tracking**: Maintain a list of student organizations and their details.
-- **Student Database**: Store student information including their enrolled programs.
-- **Membership Management**: Track student memberships in various organizations, including the date they joined.
-- **Automated Seeding**: Includes a management command to populate the database with realistic fake data for testing and development.
-- **Enhanced Admin Dashboard**: Custom administrative views for better data visibility and searchability.
+## Features
+- **Interactive Dashboard**: Real-time statistics and summaries of organizations, students, and memberships.
+- **Organization Management**: Track student organizations and their college affiliations.
+- **Student Directory**: Comprehensive database of students across various programs.
+- **Academic Structure**: Manage Colleges and degree Programs.
+- **Membership Tracking**: Monitor student involvement in different organizations.
+- **Enhanced Admin UI**: Custom administrative views for efficient data management.
 
-## Authors / Team Details
-- Developed as part of the PSUSphere Project.
-- Team: [Author Names]
+## Technical Stack
+- **Backend**: Django (Python)
+- **Frontend**: Ready Bootstrap Dashboard Template
+- **Database**: SQLite (Development)
+- **Icons**: Line Awesome
 
-## Setup Instructions
-1. Clone the repository.
-2. Install dependencies: `pip install -r requirements.txt`.
-3. Run migrations: `python manage.py migrate`.
-4. Create a superuser: `python manage.py createsuperuser`.
-5. Run the server: `python manage.py runserver`.
-6. (Optional) Seed initial data: `python manage.py create_initial_data`.
+## Project Structure
+- `.gitignore`: Root-level version control configuration.
+- `projectsite/`: Main Django project directory.
+    - `studentorg/`: Core application containing models, views, and management commands.
+    - `static/`: Consolidated Bootstrap theme assets (CSS, JS, Images).
+    - `templates/`: Project-level HTML templates and UI components.
+- `requirements.txt`: Python package dependencies.
+
+## Setup & Execution
+1. **Install Dependencies**: `pip install -r requirements.txt`
+2. **Migrations**: `python manage.py migrate`
+3. **Seed Data**: `python manage.py create_initial_data`
+4. **Admin Account**: `python manage.py createsuperuser`
+5. **Run Server**: `python manage.py runserver`
+
+## Authors
+- Developed as part of the PSUSphere Lab Project.
