@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
-SITE_ID = 2
+# Dynamic SITE_ID based on host
+SITE_ID = 1 if 'pythonanywhere.com' in ALLOWED_HOSTS else 2
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
