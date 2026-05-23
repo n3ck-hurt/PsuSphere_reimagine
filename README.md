@@ -31,6 +31,13 @@ PSUSphere is a modern, responsive web application built with Django for managing
 3. **Seed Data**: `python manage.py create_initial_data`
 4. **Admin Account**: `python manage.py createsuperuser`
 5. **Run Server**: `python manage.py runserver`
+6. **Create Google Social App**: `python manage.py setup_social_apps`
+
+## Google Auth Setup
+1. Create OAuth credentials in Google Cloud Console.
+2. Use the callback URL: `http://localhost:8000/accounts/google/login/callback/` (or your deployed domain URL).
+3. Add `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` to a `.env` file at project root.
+4. Run the site and visit `/accounts/login/` to sign in with Google.
 
 ## Authors
 - Developed as part of the PSUSphere Lab Project.

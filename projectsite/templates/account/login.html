@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block title %}Login | PSUSphere{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Sign in to PSUSphere</h4>
+                </div>
+                <div class="card-body">
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {{ form.errors|striptags }}
+                        </div>
+                    {% endif %}
+
+                    <form method="post" action="{% url 'account_login' %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+
+                    <hr>
+                    <div class="text-center mb-3"><strong>Or sign in with</strong></div>
+                    {% get_providers as socialaccount_providers %}
+                    {% if socialaccount_providers %}
+                        {% for provider in socialaccount_providers %}
+                            <a class="btn btn-outline-secondary btn-block mb-2" href="{% provider_login_url provider.id process='login' %}">
+                                Continue with {{ provider.name }}
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <div class="alert alert-info">Google login is not configured yet.</div>
+                    {% endif %}
+
+                    <div class="text-center mt-3">
+                        <p class="mb-1">New to PSUSphere? <a href="{% url 'account_signup' %}">Sign up</a></p>
+                        <p><a href="{% url 'account_reset_password' %}">Forgot password?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
